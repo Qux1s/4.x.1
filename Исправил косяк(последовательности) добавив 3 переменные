@@ -1,0 +1,75 @@
+#include <iostream>
+
+double userPrintFirstNumber();
+double userPrintSecondNumber();
+char userPrintOperation();
+void printResult(double, double, char);
+
+int main()
+
+{
+	double userNumberOne { userPrintFirstNumber() };
+
+	double userNumberTwo{ userPrintSecondNumber() };
+
+	char userOperation1{ userPrintOperation() };
+
+	printResult(userNumberOne, userNumberTwo, userOperation1);
+
+}
+
+double userPrintFirstNumber()
+
+{ 
+
+	std::cout << "Enter your first number: ";
+
+	double number { };
+
+	std::cin >> number;
+
+	return number;
+
+}
+
+double userPrintSecondNumber()
+
+{
+
+	std::cout << "Enter your second number: ";
+
+	double number{ };
+
+	std::cin >> number;
+
+	return number;
+
+}
+
+char userPrintOperation()
+
+{
+
+	std::cout << "Enter one of the following: +, -, *, or /: ";
+
+	char userOperation{};
+
+	std::cin >> userOperation;
+
+	return userOperation;
+
+}
+
+void printResult(double userFirst, double userSecond, char userOperation)
+
+{
+
+	if (userOperation == '+')
+		std::cout << userFirst << " + " << userSecond << " is " << userFirst + userSecond << '\n';
+	else if (userOperation == '-')
+		std::cout << userFirst << " - " << userSecond << " is " << userFirst - userSecond << '\n';
+	else if (userOperation == '*')
+		std::cout << userFirst << " * " << userSecond << " is " << userFirst * userSecond << '\n';
+	else if (userOperation == '/')
+		std::cout << userFirst << " / " << userSecond << " is " << userFirst / userSecond << '\n';
+}
